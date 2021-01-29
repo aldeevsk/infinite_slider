@@ -1,30 +1,32 @@
+
 (function () {
     let track = document.querySelector('.track');
     console.log(track.firstElementChild);
     const prev = document.querySelector('.prev');
     const next = document.querySelector('.next');
 
-    prev.addEventListener('click', scrollPrev);
-    next.addEventListener('click', scrollNext);
 
-    function scrollPrev() {
-        track.style.transition = 'all linear 0';
-        track.lastElementChild.style.width = '0';
+    prev.addEventListener('click', () => {
+        track.style.transition = '0s all linear';
         track.prepend(track.lastElementChild);
-        track.style.transition = 'all linear 800';
+        track.style.left = '-1170px';
         setTimeout(() => {
-            track.firstElementChild.style.width = '1170px';
+            track.style.transition = '0.8s all linear';
+            track.style.left = '0';
         }, 0);
-    }
+
+    })
 
 
-    function scrollNext() {
-        track.firstElementChild.style.width = "0";
+    next.addEventListener('click', () => {
+        track.style.transition = '0.8s all linear';
+        track.style.left = '-1170px';
         setTimeout(() => {
+            track.style.transition = '0s all linear';
             track.append(track.firstElementChild);
+            track.style.left = '0';
         }, 800);
-        track.lastElementChild.style.width = '1170px';
-        
-    }
+
+    })
     
 })();

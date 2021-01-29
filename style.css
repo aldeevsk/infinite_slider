@@ -17,8 +17,8 @@ section {
 .track {
     display: flex;
     position: relative;
-    left: 0;
-    transition: 800;
+    left: 0px;
+    transition: 0.8s all linear;
 }
 
 .controls {
@@ -46,7 +46,6 @@ section {
 
 .slide {
     width: 1170px;
-    transition: 2s;
 }
 
 
